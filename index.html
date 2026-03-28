@@ -1,0 +1,2912 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dr. T N Rekha Singh | Skin, Hair & Laser Clinic – Malkajgiri, Hyderabad</title>
+    <meta name="description"
+        content="Hyderabad's premier dermatology clinic led by Dr. T N Rekha Singh, MBBS MD DVL – expert in laser treatments, acne, hair loss, pigmentation & aesthetic dermatology." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+        rel="stylesheet" />
+    <link href="https://unpkg.com/lucide-static@latest/font/lucide.css" rel="stylesheet" />
+
+    <style>
+        /* ============================
+       CSS CUSTOM PROPERTIES
+    ============================ */
+        :root {
+            --cream: #faf8f5;
+            --white: #ffffff;
+            --blush: #f5ede8;
+            --sage: #d6e8df;
+            --sage-mid: #a8cfc0;
+            --sage-dark: #3d8a72;
+            --sage-deeper: #2d6e5a;
+            --rose: #c8796a;
+            --rose-light: #f0d0ca;
+            --charcoal: #1e2229;
+            --slate: #3d4451;
+            --muted: #7a8394;
+            --border: rgba(100, 120, 110, 0.12);
+            --glass: rgba(255, 255, 255, 0.72);
+            --shadow-sm: 0 2px 12px rgba(30, 34, 41, 0.07);
+            --shadow-md: 0 8px 32px rgba(30, 34, 41, 0.10);
+            --shadow-lg: 0 20px 60px rgba(30, 34, 41, 0.13);
+            --radius: 16px;
+            --radius-lg: 28px;
+            --radius-xl: 48px;
+            --transition: 0.38s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* ============================
+       RESET & BASE
+    ============================ */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            color: var(--charcoal);
+            overflow-x: hidden;
+            line-height: 1.65;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ============================
+       LOADER
+    ============================ */
+        #loader {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: var(--cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 20px;
+            transition: opacity 0.6s ease, visibility 0.6s ease;
+        }
+
+        #loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            color: var(--sage-dark);
+        }
+
+        .loader-bar {
+            width: 180px;
+            height: 2px;
+            background: var(--border);
+            border-radius: 99px;
+            overflow: hidden;
+        }
+
+        .loader-fill {
+            height: 100%;
+            width: 0%;
+            background: var(--sage-dark);
+            border-radius: 99px;
+            animation: fillBar 1.6s ease forwards;
+        }
+
+        @keyframes fillBar {
+            to {
+                width: 100%;
+            }
+        }
+
+        /* ============================
+       SCROLL REVEAL
+    ============================ */
+        .reveal {
+            opacity: 0;
+            transform: translateY(28px);
+            transition: opacity 0.75s ease, transform 0.75s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-32px);
+            transition: opacity 0.75s ease, transform 0.75s ease;
+        }
+
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(32px);
+            transition: opacity 0.75s ease, transform 0.75s ease;
+        }
+
+        .reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ============================
+       TYPOGRAPHY
+    ============================ */
+        .serif {
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            line-height: 1.18;
+        }
+
+        h1 {
+            font-size: clamp(2.8rem, 6vw, 5.2rem);
+        }
+
+        h2 {
+            font-size: clamp(2rem, 4vw, 3.2rem);
+        }
+
+        h3 {
+            font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+        }
+
+        .section-label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--sage-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-label::before {
+            content: '';
+            display: block;
+            width: 28px;
+            height: 1.5px;
+            background: var(--sage-dark);
+        }
+
+        /* ============================
+       LAYOUT UTILITIES
+    ============================ */
+        .container {
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .section {
+            padding: 96px 0;
+        }
+
+        .section-sm {
+            padding: 64px 0;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        @media(max-width:900px) {
+
+            .grid-2,
+            .grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width:700px) {
+            .grid-4 {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* ============================
+       BUTTONS
+    ============================ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 30px;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            transition: var(--transition);
+            font-family: 'DM Sans', sans-serif;
+            letter-spacing: 0.02em;
+        }
+
+        .btn-primary {
+            background: var(--sage-dark);
+            color: white;
+            box-shadow: 0 4px 20px rgba(61, 138, 114, 0.35);
+        }
+
+        .btn-primary:hover {
+            background: var(--sage-deeper);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(61, 138, 114, 0.45);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--charcoal);
+            border: 1.5px solid rgba(30, 34, 41, 0.25);
+        }
+
+        .btn-outline:hover {
+            background: var(--charcoal);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .btn-white {
+            background: white;
+            color: var(--sage-dark);
+        }
+
+        .btn-white:hover {
+            background: var(--sage);
+            transform: translateY(-2px);
+        }
+
+        /* ============================
+       NAVBAR
+    ============================ */
+        #navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 16px 0;
+            transition: background 0.4s, box-shadow 0.4s, padding 0.4s;
+        }
+
+        #navbar.scrolled {
+            background: var(--glass);
+            backdrop-filter: blur(18px) saturate(1.4);
+            -webkit-backdrop-filter: blur(18px) saturate(1.4);
+            box-shadow: 0 2px 24px rgba(30, 34, 41, 0.09);
+            padding: 10px 0;
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.3rem;
+            font-weight: 600;
+            line-height: 1.2;
+        }
+
+        .nav-logo span {
+            color: var(--sage-dark);
+            display: block;
+            font-size: 0.72rem;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 400;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-top: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            font-size: 0.88rem;
+            font-weight: 400;
+            color: var(--slate);
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--sage-dark);
+        }
+
+        .nav-cta {
+            margin-left: 12px;
+        }
+
+        #hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 4px;
+            background: none;
+            border: none;
+            z-index: 1100;
+        }
+
+        #hamburger span {
+            display: block;
+            width: 24px;
+            height: 1.8px;
+            background: var(--charcoal);
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+
+        #hamburger.open span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        #hamburger.open span:nth-child(2) {
+            opacity: 0;
+        }
+
+        #hamburger.open span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        #mobile-menu {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--cream);
+            z-index: 1050;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 36px;
+        }
+
+        #mobile-menu.active {
+            display: flex;
+        }
+
+        #mobile-menu a {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            font-weight: 400;
+            color: var(--charcoal);
+        }
+
+        #mobile-menu a:hover {
+            color: var(--sage-dark);
+        }
+
+        @media(max-width:860px) {
+            .nav-links {
+                display: none;
+            }
+
+            #hamburger {
+                display: flex;
+            }
+        }
+
+        /* ============================
+       HERO
+    ============================ */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f0f7f4 0%, #faf8f5 55%, #f8ede9 100%);
+        }
+
+        .hero-bg-circle {
+            position: absolute;
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .hero-bg-circle.c1 {
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(168, 207, 192, 0.28) 0%, transparent 70%);
+            top: -120px;
+            right: -120px;
+        }
+
+        .hero-bg-circle.c2 {
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(200, 121, 106, 0.12) 0%, transparent 70%);
+            bottom: 40px;
+            left: -60px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+            padding: 120px 0 80px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(61, 138, 114, 0.10);
+            border: 1px solid rgba(61, 138, 114, 0.22);
+            border-radius: 99px;
+            padding: 6px 16px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: var(--sage-dark);
+            margin-bottom: 24px;
+            backdrop-filter: blur(4px);
+        }
+
+        .hero-badge .dot {
+            width: 6px;
+            height: 6px;
+            background: var(--sage-dark);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1)
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(1.3)
+            }
+        }
+
+        .hero-title {
+            margin-bottom: 20px;
+        }
+
+        .hero-title em {
+            font-style: italic;
+            color: var(--sage-dark);
+        }
+
+        .hero-desc {
+            font-size: 1.05rem;
+            color: var(--muted);
+            max-width: 480px;
+            margin-bottom: 36px;
+            line-height: 1.75;
+        }
+
+        .hero-stats {
+            display: flex;
+            gap: 32px;
+            margin-top: 40px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+        }
+
+        .stat-item {}
+
+        .stat-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.4rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.78rem;
+            color: var(--muted);
+            margin-top: 4px;
+            font-weight: 400;
+        }
+
+        .hero-visual {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-card-main {
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 3/4;
+            background: linear-gradient(160deg, var(--sage) 0%, var(--sage-mid) 100%);
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            position: relative;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .hero-card-overlay {
+            position: absolute;
+            inset: 0;
+            background-image: url('./images/rekha-singh.png');
+            background-size: cover;
+            background-position: center top;
+
+        }
+
+        .hero-card-info {
+            position: relative;
+            z-index: 2;
+            padding: 28px;
+            color: var(--sage-dark);
+        }
+
+        .hero-card-info h3 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .hero-card-info p {
+            font-size: 0.82rem;
+            opacity: 0.85;
+        }
+
+        .hero-card-float {
+            position: absolute;
+            background: var(--glass);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 14px;
+            padding: 14px 18px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .float-1 {
+            top: 32px;
+            right: -20px;
+        }
+
+        .float-2 {
+            bottom: 110px;
+            left: -28px;
+        }
+
+        .float-val {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--charcoal);
+            line-height: 1;
+        }
+
+        .float-lbl {
+            font-size: 0.72rem;
+            color: var(--muted);
+            white-space: nowrap;
+        }
+
+        /* decorative icon grid in hero card */
+        .hero-card-bg-icons {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px;
+            opacity: 0.12;
+        }
+
+        .hero-card-bg-icons span {
+            font-size: 2.2rem;
+            color: white;
+            display: block;
+        }
+
+        @media(max-width:900px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                padding: 110px 0 60px;
+                text-align: center;
+            }
+
+            .hero-desc {
+                margin: 0 auto 36px;
+            }
+
+            .hero-stats {
+                justify-content: center;
+            }
+
+            .hero-visual {
+                display: none;
+            }
+        }
+
+        /* ============================
+       MARQUEE
+    ============================ */
+        .marquee-strip {
+            background: var(--sage-dark);
+            color: white;
+            padding: 14px 0;
+            overflow: hidden;
+        }
+
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: marqueeAnim 30s linear infinite;
+        }
+
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+
+        .marquee-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            white-space: nowrap;
+            padding: 0 40px;
+            font-size: 0.82rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            opacity: 0.92;
+        }
+
+        .marquee-dot {
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+        }
+
+        @keyframes marqueeAnim {
+            0% {
+                transform: translateX(0)
+            }
+
+            100% {
+                transform: translateX(-50%)
+            }
+        }
+
+        /* ============================
+       ABOUT
+    ============================ */
+        #about {
+            background: white;
+        }
+
+        .about-img-wrap {
+            position: relative;
+        }
+
+        .about-img-frame {
+            width: 100%;
+            aspect-ratio: 4/5;
+            background: linear-gradient(145deg, var(--blush) 0%, var(--rose-light) 100%);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-img-icon {
+            font-size: 7rem;
+            opacity: 0.2;
+        }
+
+        .about-img-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            background: var(--sage-dark);
+            color: white;
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            box-shadow: var(--shadow-md);
+            text-align: center;
+        }
+
+        .about-img-badge .num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.6rem;
+            font-weight: 600;
+            line-height: 1;
+        }
+
+        .about-img-badge .lbl {
+            font-size: 0.72rem;
+            opacity: 0.85;
+            margin-top: 4px;
+        }
+
+        .about-text {
+            padding-left: 24px;
+        }
+
+        .about-text h2 {
+            margin: 16px 0 20px;
+        }
+
+        .about-text p {
+            color: var(--muted);
+            margin-bottom: 16px;
+            line-height: 1.8;
+        }
+
+        .about-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 24px 0;
+        }
+
+        .pill {
+            background: var(--sage);
+            color: var(--sage-deeper);
+            padding: 7px 16px;
+            border-radius: 99px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .about-certs {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 28px;
+        }
+
+        .cert-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.88rem;
+            color: var(--slate);
+        }
+
+        .cert-icon {
+            width: 36px;
+            height: 36px;
+            background: var(--sage);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--sage-dark);
+            font-size: 1rem;
+        }
+
+        @media(max-width:900px) {
+            .about-text {
+                padding-left: 0;
+                padding-top: 20px;
+            }
+        }
+
+        /* ============================
+       SERVICES
+    ============================ */
+        #services {
+            background: var(--cream);
+        }
+
+        .services-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .services-header h2 {
+            margin: 12px 0 16px;
+        }
+
+        .services-header p {
+            color: var(--muted);
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        .services-header .section-label {
+            justify-content: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 32px 28px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            cursor: default;
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(61, 138, 114, 0.06) 0%, transparent 60%);
+            opacity: 0;
+            transition: opacity 0.35s;
+            border-radius: inherit;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-card:hover::after {
+            opacity: 1;
+        }
+
+        .service-icon {
+            width: 54px;
+            height: 54px;
+            background: var(--sage);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--sage-dark);
+            transition: background 0.3s;
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--sage-dark);
+            color: white;
+        }
+
+        .service-card h3 {
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+        }
+
+        .service-card p {
+            font-size: 0.88rem;
+            color: var(--muted);
+            line-height: 1.75;
+        }
+
+        .service-list {
+            margin-top: 16px;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .service-list li {
+            font-size: 0.82rem;
+            color: var(--slate);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .service-list li::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            background: var(--sage-mid);
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+
+        @media(max-width:900px) {
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media(max-width:600px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============================
+       BEFORE / AFTER GALLERY
+    ============================ */
+        #gallery {
+            background: white;
+        }
+
+        .gallery-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .gallery-header .section-label {
+            justify-content: center;
+        }
+
+        .gallery-header h2 {
+            margin: 12px 0 16px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            border-radius: var(--radius);
+            overflow: hidden;
+            position: relative;
+            background: var(--blush);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .gallery-item:first-child {
+            grid-column: span 2;
+        }
+
+        .ba-wrap {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            position: relative;
+        }
+
+        .ba-panel {
+            aspect-ratio: 3/4;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+
+        .ba-panel.before {
+            background: linear-gradient(145deg, #f0d0ca, #f5e0d8);
+            color: #8b5e57;
+        }
+
+        .ba-panel.after {
+            background: linear-gradient(145deg, #d6e8df, #a8cfc0);
+            color: #2d6e5a;
+        }
+
+        .ba-panel .ba-icon {
+            font-size: 2.8rem;
+            opacity: 0.5;
+        }
+
+        .ba-divider {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: white;
+            transform: translateX(-50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .ba-divider-circle {
+            width: 28px;
+            height: 28px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7rem;
+            color: var(--sage-dark);
+            font-weight: 700;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .gallery-label {
+            padding: 14px 18px;
+            background: white;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--slate);
+        }
+
+        .gallery-tag {
+            display: inline-block;
+            margin-top: 4px;
+            font-size: 0.7rem;
+            color: var(--sage-dark);
+            background: var(--sage);
+            border-radius: 99px;
+            padding: 2px 10px;
+        }
+
+        a:-webkit-any-link:focus-visible {
+            outline-offset: 0px;
+        }
+
+        @media(max-width:700px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item:first-child {
+                grid-column: span 1;
+            }
+        }
+
+        /* ============================
+       TESTIMONIALS
+    ============================ */
+        #testimonials {
+            background: var(--cream);
+        }
+
+        .testimonials-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .testimonials-header .section-label {
+            justify-content: center;
+        }
+
+        .testimonials-header h2 {
+            margin: 12px 0;
+        }
+
+        .testimonials-header p {
+            color: var(--muted);
+            font-size: 0.95rem;
+        }
+
+        .testimonials-slider {
+            position: relative;
+        }
+
+        .testi-track {
+            display: flex;
+            gap: 24px;
+            overflow: hidden;
+        }
+
+        .testi-card {
+            min-width: calc(33.333% - 16px);
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 32px 28px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--border);
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .testi-card::before {
+            content: '"';
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 8rem;
+            line-height: 1;
+            color: var(--sage);
+            position: absolute;
+            top: -10px;
+            right: 20px;
+            pointer-events: none;
+        }
+
+        .stars {
+            color: #f5a623;
+            font-size: 0.85rem;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 2px;
+        }
+
+        .testi-text {
+            font-size: 0.92rem;
+            color: var(--slate);
+            line-height: 1.8;
+            margin-bottom: 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .testi-author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .testi-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .testi-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .testi-meta {
+            font-size: 0.75rem;
+            color: var(--muted);
+        }
+
+        .testi-nav {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 36px;
+        }
+
+        .testi-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 99px;
+            background: var(--border);
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            padding: 0;
+        }
+
+        .testi-dot.active {
+            width: 24px;
+            background: var(--sage-dark);
+        }
+
+        @media(max-width:900px) {
+            .testi-card {
+                min-width: calc(50% - 12px);
+            }
+        }
+
+        @media(max-width:600px) {
+            .testi-card {
+                min-width: 100%;
+            }
+        }
+
+        /* ============================
+       DOCTOR PROFILE
+    ============================ */
+        #doctor {
+            background: linear-gradient(135deg, var(--charcoal) 0%, #2d3540 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #doctor::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .doctor-inner {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1.3fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        .doctor-card-wrap {
+            display: flex;
+            justify-content: center;
+        }
+
+        .doctor-card {
+            width: 100%;
+            max-width: 340px;
+            background: linear-gradient(160deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: var(--radius-xl);
+            padding: 40px 32px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .doctor-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background: linear-gradient(145deg, var(--sage-mid), var(--sage-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            color: white;
+            font-weight: 400;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .doctor-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 4px;
+        }
+
+        .doctor-card .spec {
+            font-size: 0.82rem;
+            color: var(--sage-mid);
+            letter-spacing: 0.08em;
+        }
+
+        .doctor-card-divider {
+            width: 40px;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.2);
+            margin: 20px auto;
+        }
+
+        .doctor-card-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-top: 8px;
+        }
+
+        .doc-stat {
+            background: rgba(255, 255, 255, 0.07);
+            border-radius: 12px;
+            padding: 14px 10px;
+        }
+
+        .doc-stat .n {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--sage-mid);
+            line-height: 1;
+        }
+
+        .doc-stat .l {
+            font-size: 0.7rem;
+            color: rgba(255, 255, 255, 0.5);
+            margin-top: 4px;
+        }
+
+        .doctor-info {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        .doctor-info .section-label {
+            color: var(--sage-mid);
+        }
+
+        .doctor-info .section-label::before {
+            background: var(--sage-mid);
+        }
+
+        .doctor-info h2 {
+            color: white;
+            margin: 16px 0 20px;
+        }
+
+        .doctor-info p {
+            line-height: 1.8;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
+        }
+
+        .doctor-achievements {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin: 28px 0;
+        }
+
+        .achievement {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 14px;
+            padding: 16px;
+        }
+
+        .achievement-icon {
+            width: 38px;
+            height: 38px;
+            background: rgba(168, 207, 192, 0.2);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            font-size: 1rem;
+            color: var(--sage-mid);
+        }
+
+        .achievement-text h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .achievement-text p {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .memberships {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .member-badge {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 99px;
+            padding: 6px 14px;
+            font-size: 0.75rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        @media(max-width:900px) {
+            .doctor-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .doctor-card-wrap {
+                margin-bottom: 12px;
+            }
+        }
+
+        /* ============================
+       BOOKING
+    ============================ */
+        #booking {
+            background: white;
+        }
+
+        .booking-inner {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 64px;
+            align-items: start;
+        }
+
+        .booking-left h2 {
+            margin: 16px 0 20px;
+        }
+
+        .booking-left p {
+            color: var(--muted);
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+
+        .booking-info-item {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 20px;
+            align-items: flex-start;
+        }
+
+        .booking-info-icon {
+            width: 42px;
+            height: 42px;
+            background: var(--sage);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--sage-dark);
+            flex-shrink: 0;
+        }
+
+        .booking-info-text .label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .booking-info-text .value {
+            font-size: 0.92rem;
+            font-weight: 500;
+            color: var(--charcoal);
+            margin-top: 2px;
+        }
+
+        .booking-form {
+            background: var(--cream);
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            border: 1px solid var(--border);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--slate);
+            margin-bottom: 6px;
+            letter-spacing: 0.04em;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            background: white;
+            border: 1.5px solid var(--border);
+            border-radius: 10px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.9rem;
+            color: var(--charcoal);
+            transition: border-color 0.25s, box-shadow 0.25s;
+            outline: none;
+            -webkit-appearance: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: var(--sage-dark);
+            box-shadow: 0 0 0 3px rgba(61, 138, 114, 0.12);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 15px;
+            font-size: 1rem;
+            border-radius: 12px;
+            font-family: 'DM Sans', sans-serif;
+        }
+
+        .form-note {
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--muted);
+            margin-top: 12px;
+        }
+
+        #form-success {
+            display: none;
+            text-align: center;
+            padding: 24px;
+            background: var(--sage);
+            border-radius: 12px;
+            color: var(--sage-deeper);
+            font-weight: 500;
+        }
+
+        @media(max-width:900px) {
+            .booking-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============================
+       CONTACT
+    ============================ */
+        #contact {
+            background: var(--cream);
+        }
+
+        .contact-inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: start;
+        }
+
+        .contact-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            padding: 36px;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .contact-card h3 {
+            margin-bottom: 28px;
+        }
+
+        .contact-detail {
+            display: flex;
+            gap: 14px;
+            margin-bottom: 22px;
+            align-items: flex-start;
+        }
+
+        .contact-icon {
+            width: 42px;
+            height: 42px;
+            background: var(--sage);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--sage-dark);
+            flex-shrink: 0;
+            font-size: 1rem;
+        }
+
+        .contact-text .lbl {
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+        }
+
+        .contact-text .val {
+            font-size: 0.9rem;
+            color: var(--charcoal);
+            margin-top: 3px;
+            line-height: 1.6;
+        }
+
+        .hours-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 8px;
+        }
+
+        .hours-row {
+            font-size: 0.82rem;
+            color: var(--slate);
+        }
+
+        .hours-day {
+            font-weight: 500;
+        }
+
+        .map-card {
+            background: white;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .map-placeholder {
+            height: 260px;
+            background: linear-gradient(135deg, var(--sage) 0%, var(--sage-mid) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 12px;
+            cursor: pointer;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .map-placeholder::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+        }
+
+        .map-placeholder:hover {
+            filter: brightness(0.95);
+        }
+
+        .map-pin {
+            font-size: 3rem;
+            animation: mapBounce 2s ease infinite;
+        }
+
+        @keyframes mapBounce {
+
+            0%,
+            100% {
+                transform: translateY(0)
+            }
+
+            50% {
+                transform: translateY(-8px)
+            }
+        }
+
+        .map-label {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--sage-deeper);
+        }
+
+        .map-sublabel {
+            font-size: 0.75rem;
+            color: var(--sage-deeper);
+            opacity: 0.7;
+        }
+
+        .map-info {
+            padding: 20px 24px;
+        }
+
+        .map-info p {
+            font-size: 0.88rem;
+            color: var(--slate);
+            line-height: 1.65;
+        }
+
+        .map-info a {
+            color: var(--sage-dark);
+            font-weight: 500;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        @media(max-width:900px) {
+            .contact-inner {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ============================
+       FOOTER
+    ============================ */
+        footer {
+            background: var(--charcoal);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-top {
+            padding: 64px 0 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-brand .nav-logo {
+            color: white;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            font-size: 0.85rem;
+            line-height: 1.8;
+        }
+
+        .footer-col h4 {
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+            color: white;
+            margin-bottom: 18px;
+        }
+
+        .footer-col ul {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-col ul li a {
+            font-size: 0.85rem;
+            transition: color 0.2s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--sage-mid);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.07);
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: gap;
+            gap: 10px;
+        }
+
+        .footer-bottom p {
+            font-size: 0.8rem;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 12px;
+        }
+
+        .social-link {
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            transition: background 0.2s;
+            color: white;
+        }
+
+        .social-link:hover {
+            background: var(--sage-dark);
+        }
+
+        @media(max-width:900px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media(max-width:500px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        /* ============================
+       SCROLL TO TOP
+    ============================ */
+        #scrollTop {
+            position: fixed;
+            bottom: 28px;
+            right: 28px;
+            z-index: 900;
+            width: 46px;
+            height: 46px;
+            background: var(--sage-dark);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            border: none;
+            transition: var(--transition);
+            box-shadow: var(--shadow-md);
+            font-size: 1.1rem;
+        }
+
+        #scrollTop.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #scrollTop:hover {
+            background: var(--sage-deeper);
+            transform: translateY(-3px);
+        }
+
+        /* ============================
+       MISC ACCENTS
+    ============================ */
+        .accent-line {
+            width: 48px;
+            height: 3px;
+            background: var(--sage-dark);
+            border-radius: 99px;
+            margin: 0 0 24px;
+        }
+
+        .center-accent {
+            margin: 12px auto 0;
+        }
+
+        .green {
+            color: var(--sage-dark);
+        }
+
+        .trust-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin-top: 28px;
+        }
+
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            color: var(--slate);
+        }
+
+        .trust-badge .check {
+            width: 20px;
+            height: 20px;
+            background: var(--sage);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--sage-dark);
+            font-size: 0.7rem;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- LOADER -->
+    <div id="loader">
+        <div class="loader-logo">Dr. Rekha Singh</div>
+        <div class="loader-bar">
+            <div class="loader-fill"></div>
+        </div>
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div id="mobile-menu">
+        <a href="#about" onclick="closeMenu()">About</a>
+        <a href="#services" onclick="closeMenu()">Services</a>
+        <a href="#gallery" onclick="closeMenu()">Results</a>
+        <a href="#doctor" onclick="closeMenu()">Doctor</a>
+        <a href="#booking" onclick="closeMenu()">Book Appointment</a>
+        <a href="#contact" onclick="closeMenu()">Contact</a>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav id="navbar">
+        <div class="container nav-inner">
+            <a href="#hero" class="nav-logo">
+                Dr. T N Rekha Singh
+                <span>Skin · Hair · Laser Clinic</span>
+            </a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#gallery">Results</a>
+                <a href="#testimonials">Reviews</a>
+                <a href="#doctor">Doctor</a>
+                <a href="#contact">Contact</a>
+                <a href="#booking" class="btn btn-primary nav-cta" style="padding:10px 22px;font-size:0.82rem;">Book
+                    Appointment</a>
+            </div>
+            <button id="hamburger" onclick="toggleMenu()" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero">
+        <div class="hero-bg-circle c1"></div>
+        <div class="hero-bg-circle c2"></div>
+        <div class="container">
+            <div class="hero-content">
+                <!-- Left -->
+                <div>
+                    <div class="hero-badge reveal">
+                        <span class="dot"></span>
+                        Hyderabad's Trusted Dermatologist
+                    </div>
+                    <h1 class="hero-title reveal">
+                        Radiant Skin.<br><em>Confident You.</em>
+                    </h1>
+                    <p class="hero-desc reveal">
+                        Expert skin, hair & laser treatments tailored to you — led by Dr. T N Rekha Singh, MD DVL, with
+                        over 20 years of clinical excellence in advanced dermatology.
+                    </p>
+                    <div style="display:flex;gap:14px;flex-wrap:wrap;" class="reveal">
+                        <a href="#booking" class="btn btn-primary">Book Appointment →</a>
+                        <a href="#services" class="btn btn-outline">Explore Treatments</a>
+                    </div>
+                    <div class="hero-stats reveal">
+                        <div class="stat-item">
+                            <div class="stat-num">20+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-num">50K+</div>
+                            <div class="stat-label">Laser Treatments</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-num">99%</div>
+                            <div class="stat-label">Patient Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right visual -->
+                <div class="hero-visual">
+                    <div class="hero-card-main">
+                        <div class="hero-card-bg-icons">
+                            <span>✦</span><span>✦</span><span>✦</span><span>✦</span>
+                            <span>✦</span><span>✦</span><span>✦</span><span>✦</span>
+                            <span>✦</span><span>✦</span><span>✦</span><span>✦</span>
+                        </div>
+                        <div class="hero-card-overlay"></div>
+                        <div class="hero-card-info">
+                            <h3>Dr. T N Rekha Singh</h3>
+                            <p>MBBS · MD Dermatology, Venereology & Leprology</p>
+                        </div>
+                    </div>
+                    <div class="hero-card-float float-1 reveal-right">
+                        <div class="float-val">309+</div>
+                        <div class="float-lbl">Patient Recommendations</div>
+                    </div>
+                    <div class="hero-card-float float-2 reveal-left">
+                        <div class="float-val">4.9 ★</div>
+                        <div class="float-lbl">Average Rating</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARQUEE STRIP -->
+    <div class="marquee-strip">
+        <div class="marquee-track" id="marqueeTrack"></div>
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="grid-2">
+                <div class="about-img-wrap reveal-left">
+                    <div class="about-img-frame">
+                        <div class="about-img-icon">⚕</div>
+                    </div>
+                    <div class="about-img-badge">
+                        <div class="num">20+</div>
+                        <div class="lbl">Years of Excellence</div>
+                    </div>
+                </div>
+                <div class="about-text reveal-right">
+                    <div class="section-label">About Our Clinic</div>
+                    <h2>Where Science Meets <em class="green">Skin Confidence</em></h2>
+                    <p>
+                        Dr. T N Rekha Singh Skin, Hair & Laser Clinic is a premier dermatology destination in
+                        Malkajgiri, Secunderabad — offering internationally acclaimed treatments with a warm,
+                        patient-first philosophy.
+                    </p>
+                    <p>
+                        Founded on the belief that healthy skin transforms lives, we combine cutting-edge technology
+                        with personalised care protocols. Every treatment plan is designed around your unique skin type,
+                        concerns, and goals.
+                    </p>
+                    <div class="about-pills">
+                        <span class="pill">Advanced Laser Suite</span>
+                        <span class="pill">FDA-Approved Protocols</span>
+                        <span class="pill">Personalised Treatment Plans</span>
+                        <span class="pill">Certified Dermatologists</span>
+                    </div>
+                    <div class="about-certs">
+                        <div class="cert-row">
+                            <div class="cert-icon">🏥</div>
+                            <span>Registered with Andhra Pradesh Medical Council (Reg. No. 51377)</span>
+                        </div>
+                        <div class="cert-row">
+                            <div class="cert-icon">🎓</div>
+                            <span>MBBS – Kakatiya Medical College, Warangal</span>
+                        </div>
+                        <div class="cert-row">
+                            <div class="cert-icon">🏅</div>
+                            <span>MD DVL – Gandhi Medical College, Hyderabad</span>
+                        </div>
+                        <div class="cert-row">
+                            <div class="cert-icon">🌐</div>
+                            <span>Member: IADVL · EADV · IMA · CDSI</span>
+                        </div>
+                    </div>
+                    <div class="trust-row">
+                        <div class="trust-badge">
+                            <div class="check">✓</div> Safe & Hygienic
+                        </div>
+                        <div class="trust-badge">
+                            <div class="check">✓</div> Latest Technology
+                        </div>
+                        <div class="trust-badge">
+                            <div class="check">✓</div> Proven Results
+                        </div>
+                        <div class="trust-badge">
+                            <div class="check">✓</div> Expert Care
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="services-header reveal">
+                <div class="section-label">Our Treatments</div>
+                <h2>Comprehensive Skin & Hair Care</h2>
+                <p>From advanced laser therapies to bespoke skincare regimens — discover our full spectrum of
+                    dermatological solutions.</p>
+            </div>
+            <div class="services-grid">
+
+                <div class="service-card reveal">
+                    <div class="service-icon">✨</div>
+                    <h3>Acne & Scar Therapy</h3>
+                    <p>Clinically proven protocols to clear active acne and dramatically reduce scarring — restoring
+                        smooth, even-toned skin.</p>
+                    <ul class="service-list">
+                        <li>Chemical Peels (AHA/BHA/TCA)</li>
+                        <li>Microneedling & Dermabrasion</li>
+                        <li>Subcision & Punch Excision</li>
+                        <li>Comedone Extraction</li>
+                    </ul>
+                </div>
+
+                <div class="service-card reveal">
+                    <div class="service-icon">⚡</div>
+                    <h3>Laser Treatments</h3>
+                    <p>State-of-the-art laser systems for hair removal, skin resurfacing, pigmentation correction, and
+                        tattoo removal.</p>
+                    <ul class="service-list">
+                        <li>Diode Laser Hair Removal</li>
+                        <li>Fractional CO₂ Resurfacing</li>
+                        <li>Q-Switch Nd:YAG Laser</li>
+                        <li>Laser Toning & Skin Brightening</li>
+                    </ul>
+                </div>
+
+                <div class="service-card reveal">
+                    <div class="service-icon">💆</div>
+                    <h3>Hair Loss & PRP</h3>
+                    <p>Advanced trichology-backed treatments targeting the root cause of hair thinning, dandruff, and
+                        alopecia.</p>
+                    <ul class="service-list">
+                        <li>PRP (Platelet-Rich Plasma) Therapy</li>
+                        <li>GFC (Growth Factor Concentrate)</li>
+                        <li>Mesotherapy for Hair</li>
+                        <li>Scalp Analysis & Treatment</li>
+                    </ul>
+                </div>
+
+                <div class="service-card reveal">
+                    <div class="service-icon">🌿</div>
+                    <h3>Pigmentation & Brightening</h3>
+                    <p>Targeted therapies for melasma, dark spots, uneven skin tone, and post-inflammatory
+                        hyperpigmentation.</p>
+                    <ul class="service-list">
+                        <li>Melasma & Dark Spot Treatment</li>
+                        <li>IV Glutathione Therapy</li>
+                        <li>Skin Lightening Peels</li>
+                        <li>Dark Circles Correction</li>
+                    </ul>
+                </div>
+
+                <div class="service-card reveal">
+                    <div class="service-icon">🌸</div>
+                    <h3>Anti-Aging & Aesthetics</h3>
+                    <p>Luxurious non-surgical aesthetic treatments to reverse visible ageing and rejuvenate your
+                        appearance.</p>
+                    <ul class="service-list">
+                        <li>Botox & Fillers</li>
+                        <li>HydraFacial & Insta Glow</li>
+                        <li>Thread Lift</li>
+                        <li>Skin Boosters (Profhilo)</li>
+                    </ul>
+                </div>
+
+                <div class="service-card reveal">
+                    <div class="service-icon">🔬</div>
+                    <h3>Medical Dermatology</h3>
+                    <p>Expert diagnosis and treatment of skin diseases, infections, and conditions with clinical
+                        precision.</p>
+                    <ul class="service-list">
+                        <li>Wart & Skin Tag Removal</li>
+                        <li>Vitiligo & Psoriasis Management</li>
+                        <li>Eczema & Allergy Treatment</li>
+                        <li>Fungal & Viral Infections</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- BEFORE / AFTER GALLERY -->
+    <section id="gallery" class="section">
+        <div class="container">
+            <div class="gallery-header reveal">
+                <div class="section-label">Patient Transformations</div>
+                <h2>Real Results, Real Stories</h2>
+                <p style="color:var(--muted);max-width:480px;margin:0 auto;">Every transformation reflects our
+                    commitment to evidence-based care and personalised treatment pathways.</p>
+            </div>
+            <div class="gallery-grid reveal">
+
+                <div class="gallery-item">
+                    <div class="ba-wrap">
+                        <div class="ba-panel before">
+                            <div class="ba-icon">😟</div>
+                            Before
+                        </div>
+                        <div class="ba-panel after">
+                            <div class="ba-icon">😊</div>
+                            After
+                        </div>
+                        <div class="ba-divider">
+                            <div class="ba-divider-circle">↔</div>
+                        </div>
+                    </div>
+                    <div class="gallery-label">
+                        Severe Acne & Post-Acne Scarring
+                        <span class="gallery-tag">6 Sessions</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="ba-wrap">
+                        <div class="ba-panel before" style="aspect-ratio:3/5;">
+                            <div class="ba-icon">😟</div>
+                            Before
+                        </div>
+                        <div class="ba-panel after" style="aspect-ratio:3/5;">
+                            <div class="ba-icon">😊</div>
+                            After
+                        </div>
+                        <div class="ba-divider">
+                            <div class="ba-divider-circle">↔</div>
+                        </div>
+                    </div>
+                    <div class="gallery-label">
+                        Melasma & Pigmentation
+                        <span class="gallery-tag">4 Sessions</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="ba-wrap">
+                        <div class="ba-panel before" style="aspect-ratio:3/5;">
+                            <div class="ba-icon">😟</div>
+                            Before
+                        </div>
+                        <div class="ba-panel after" style="aspect-ratio:3/5;">
+                            <div class="ba-icon">😊</div>
+                            After
+                        </div>
+                        <div class="ba-divider">
+                            <div class="ba-divider-circle">↔</div>
+                        </div>
+                    </div>
+                    <div class="gallery-label">
+                        Hair Thinning & Loss (PRP)
+                        <span class="gallery-tag">8 Sessions</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="ba-wrap">
+                        <div class="ba-panel before">
+                            <div class="ba-icon">😟</div>
+                            Before
+                        </div>
+                        <div class="ba-panel after">
+                            <div class="ba-icon">😊</div>
+                            After
+                        </div>
+                        <div class="ba-divider">
+                            <div class="ba-divider-circle">↔</div>
+                        </div>
+                    </div>
+                    <div class="gallery-label">
+                        Laser Hair Removal – Full Body
+                        <span class="gallery-tag">6 Sessions</span>
+                    </div>
+                </div>
+
+                <div class="gallery-item">
+                    <div class="ba-wrap">
+                        <div class="ba-panel before">
+                            <div class="ba-icon">😟</div>
+                            Before
+                        </div>
+                        <div class="ba-panel after">
+                            <div class="ba-icon">😊</div>
+                            After
+                        </div>
+                        <div class="ba-divider">
+                            <div class="ba-divider-circle">↔</div>
+                        </div>
+                    </div>
+                    <div class="gallery-label">
+                        Anti-Aging & Skin Tightening
+                        <span class="gallery-tag">3 Sessions</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <p style="text-align:center;margin-top:36px;font-size:0.82rem;color:var(--muted);">
+                *Results may vary. Treatments are customised to individual skin type and condition.
+            </p>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section id="testimonials" class="section">
+        <div class="container">
+            <div class="testimonials-header reveal">
+                <div class="section-label">Patient Reviews</div>
+                <h2>What Our Patients Say</h2>
+                <p>Backed by hundreds of verified reviews across Practo, Justdial & Google.</p>
+            </div>
+            <div class="testimonials-slider reveal">
+                <div class="testi-track" id="testiTrack">
+
+                    <div class="testi-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testi-text">"Dr. Rekha is absolutely phenomenal. My acne scars were something I'd
+                            struggled with for years. After just 6 sessions, I can barely believe it's the same skin.
+                            Her attention to detail and empathy throughout the process made all the difference."</p>
+                        <div class="testi-author">
+                            <div class="testi-avatar" style="background:var(--sage-dark);">P</div>
+                            <div>
+                                <div class="testi-name">Priya Sharma</div>
+                                <div class="testi-meta">Acne Scar Treatment · Verified Patient</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testi-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testi-text">"I visited for hair loss and the PRP therapy has genuinely changed my
+                            life. The results started showing within 3 months. The staff is professional and the clinic
+                            is impeccably clean. Highly recommend Dr. Rekha to anyone experiencing hair thinning."</p>
+                        <div class="testi-author">
+                            <div class="testi-avatar" style="background:var(--rose);">R</div>
+                            <div>
+                                <div class="testi-name">Rahul Verma</div>
+                                <div class="testi-meta">PRP Hair Therapy · Verified Patient</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testi-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testi-text">"The skin lightening treatment at this clinic goes beyond just results —
+                            they genuinely prioritise your safety and confidence. Dr. Rekha never made me feel anything
+                            less than beautiful. The entire experience was warm, professional, and transformative."</p>
+                        <div class="testi-author">
+                            <div class="testi-avatar" style="background:#9b7ec8;">M</div>
+                            <div>
+                                <div class="testi-name">Muskan Reddy</div>
+                                <div class="testi-meta">Skin Brightening · Verified Patient</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testi-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="testi-text">"Laser hair removal here is genuinely top-class. The therapist explained
+                            the procedure thoroughly, the technology is state-of-the-art, and the results are permanent.
+                            I've seen absolutely no regrowth after completing my sessions."</p>
+                        <div class="testi-author">
+                            <div class="testi-avatar" style="background:#c87869;">A</div>
+                            <div>
+                                <div class="testi-name">Ananya Krishnan</div>
+                                <div class="testi-meta">Laser Hair Removal · Verified Patient</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testi-card">
+                        <div class="stars">★★★★☆</div>
+                        <p class="testi-text">"I consulted Dr. Rekha for my persistent melasma. She was incredibly
+                            thorough in her diagnosis and created a multi-step treatment plan. After 4 months, the
+                            improvement is remarkable. Truly one of the best dermatologists in Hyderabad."</p>
+                        <div class="testi-author">
+                            <div class="testi-avatar" style="background:#6b8cba;">S</div>
+                            <div>
+                                <div class="testi-name">Sunitha Naidu</div>
+                                <div class="testi-meta">Melasma Treatment · Verified Patient</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="testi-nav" id="testiNav"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DOCTOR PROFILE -->
+    <section id="doctor" class="section">
+        <div class="container doctor-inner">
+            <div class="doctor-card-wrap reveal-left">
+                <div class="doctor-card">
+                    <div class="doctor-avatar">R</div>
+                    <h3>Dr. T N Rekha Singh</h3>
+                    <div class="spec">MBBS · MD – DVL · Dermatologist & Cosmetologist</div>
+                    <div class="doctor-card-divider"></div>
+                    <div class="doctor-card-stats">
+                        <div class="doc-stat">
+                            <div class="n">20+</div>
+                            <div class="l">Yrs Experience</div>
+                        </div>
+                        <div class="doc-stat">
+                            <div class="n">50K+</div>
+                            <div class="l">Laser Cases</div>
+                        </div>
+                        <div class="doc-stat">
+                            <div class="n">45K+</div>
+                            <div class="l">Acne Cases</div>
+                        </div>
+                        <div class="doc-stat">
+                            <div class="n">6K+</div>
+                            <div class="l">PRP Cases</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="doctor-info reveal-right">
+                <div class="section-label">Meet Your Specialist</div>
+                <h2>A Name Synonymous with Dermatological Excellence</h2>
+                <p>
+                    Dr. T N Rekha Singh is a highly decorated Consultant Dermatologist & Cosmetologist with over two
+                    decades of expertise in aesthetic dermatology, advanced lasers, and trichology. She completed her
+                    MBBS from Kakatiya Medical College, Warangal and her MD DVL from Gandhi Medical College, Hyderabad.
+                </p>
+                <p>
+                    A prolific academician, she has published in leading journals including the Indian Journal of
+                    Dermatology and has trained over 90 dermato-trichologists nationwide. She has chaired and presented
+                    at numerous national and international dermatology conferences.
+                </p>
+                <div class="doctor-achievements">
+                    <div class="achievement">
+                        <div class="achievement-icon">🏆</div>
+                        <div class="achievement-text">
+                            <h4>National Training Leader</h4>
+                            <p>Mentored 90+ certified dermato-trichologists across India</p>
+                        </div>
+                    </div>
+                    <div class="achievement">
+                        <div class="achievement-icon">📝</div>
+                        <div class="achievement-text">
+                            <h4>Published Researcher</h4>
+                            <p>Multiple peer-reviewed publications in IJDVL and Indian Journal of Dermatology</p>
+                        </div>
+                    </div>
+                    <div class="achievement">
+                        <div class="achievement-icon">🎤</div>
+                        <div class="achievement-text">
+                            <h4>Conference Speaker & Chair</h4>
+                            <p>Expert panelist and moderator at national & international dermatology events</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="memberships">
+                    <span class="member-badge">IADVL</span>
+                    <span class="member-badge">EADV</span>
+                    <span class="member-badge">IMA</span>
+                    <span class="member-badge">CDSI</span>
+                    <span class="member-badge">IAD</span>
+                    <span class="member-badge">AP Medical Council</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BOOKING -->
+    <section id="booking" class="section">
+        <div class="container booking-inner">
+            <div class="reveal-left">
+                <div class="section-label">Schedule a Visit</div>
+                <h2>Book Your <em class="green">Appointment</em></h2>
+                <p>Take the first step towards healthier skin and hair. Book a consultation with Dr. Rekha Singh and
+                    receive a personalised treatment plan designed just for you.</p>
+                <div class="booking-info-item">
+                    <div class="booking-info-icon">📍</div>
+                    <div class="booking-info-text">
+                        <div class="label">Primary Clinic</div>
+                        <div class="value">Uttam Nagar Rd, Surya nagar, Aishwarya Plaza, RK Nagar Colony, Malkajgiri, Secunderabad, Telangana 500047</div>
+                    </div>
+                </div>
+                <div class="booking-info-item">
+                    <div class="booking-info-icon">📞</div>
+                    <div class="booking-info-text">
+                        <div class="label">Phone / WhatsApp</div>
+                        <div class="value">+91 82978 82978</div>
+                    </div>
+                </div>
+                <div class="booking-info-item">
+                    <div class="booking-info-icon">🕐</div>
+                    <div class="booking-info-text">
+                        <div class="label">Clinic Hours</div>
+                        <div class="value">Monday – Saturday: 10:00 AM – 7:00 PM<br>Sunday: By appointment only</div>
+                    </div>
+                </div>
+                <div class="booking-info-item">
+                    <div class="booking-info-icon">⏱</div>
+                    <div class="booking-info-text">
+                        <div class="label">Consultation Duration</div>
+                        <div class="value">30–45 minutes (initial consultation)</div>
+                    </div>
+                </div>
+            </div>
+            <div class="reveal-right">
+                <div class="booking-form">
+                    <h3 style="margin-bottom:24px;">Request an Appointment</h3>
+                    <div id="form-success">
+                        ✓ Thank you! Your appointment request has been received. We'll confirm within 24 hours.
+                    </div>
+                    <form id="appointmentForm" onsubmit="handleSubmit(event)">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="fname">First Name *</label>
+                                <input type="text" id="fname" placeholder="Priya" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="lname">Last Name *</label>
+                                <input type="text" id="lname" placeholder="Sharma" required />
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Phone Number *</label>
+                                <input type="tel" id="phone" placeholder="+91 98765 43210" required />
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" placeholder="priya@email.com" />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Treatment Interested In *</label>
+                            <select id="service" required>
+                                <option value="">Select a treatment...</option>
+                                <option>Acne & Pimple Treatment</option>
+                                <option>Acne Scar Removal</option>
+                                <option>Laser Hair Removal</option>
+                                <option>Hair Loss / PRP Therapy</option>
+                                <option>Pigmentation & Melasma</option>
+                                <option>Anti-Aging / Botox & Fillers</option>
+                                <option>Skin Brightening</option>
+                                <option>Laser Resurfacing</option>
+                                <option>Chemical Peels</option>
+                                <option>Wart / Skin Tag Removal</option>
+                                <option>General Dermatology Consultation</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="date">Preferred Date</label>
+                            <input type="date" id="date" />
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Brief Description of Concern</label>
+                            <textarea id="message"
+                                placeholder="Tell us a bit about your skin or hair concern..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary form-submit">Confirm Appointment Request →</button>
+                        <p class="form-note">🔒 Your information is secure and will never be shared with third parties.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section-sm">
+        <div class="container">
+            <div style="margin-bottom:40px;" class="reveal">
+                <div class="section-label">Find Us</div>
+                <h2 style="margin-top:12px;">Visit the Clinic</h2>
+            </div>
+            <div class="contact-inner">
+                <div class="contact-card reveal-left">
+                    <h3>Contact Information</h3>
+                    <div class="contact-detail">
+                        <div class="contact-icon">📍</div>
+                        <div class="contact-text">
+                            <div class="lbl">Clinic Address</div>
+                            <div class="val">A V Poly Clinic,Uttam Nagar Rd, Surya nagar, Aishwarya Plaza, RK Nagar
+                                Colony, Malkajgiri, Secunderabad, Telangana 500047</div>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">📞</div>
+                        <div class="contact-text">
+                            <div class="lbl">Phone / WhatsApp</div>
+                            <div class="val"><a href="tel:+918297882978">+91 82978 82978</a></div>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">🕐</div>
+                        <div class="contact-text">
+                            <div class="lbl">Working Hours</div>
+                            <div class="val">
+                                <div class="hours-grid">
+                                    <div class="hours-row">
+                                        <div class="hours-day">Mon – Fri</div>10:00 AM – 7:00 PM
+                                    </div>
+                                    <div class="hours-row">
+                                        <div class="hours-day">Saturday</div>10:00 AM – 6:00 PM
+                                    </div>
+                                    <div class="hours-row">
+                                        <div class="hours-day">Sunday</div>By Appointment
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-detail">
+                        <div class="contact-icon">🚇</div>
+                        <div class="contact-text">
+                            <div class="lbl">Landmark / How to Reach</div>
+                            <div class="val">Below LIC ,Manjeera's Sai Sadan street no.3, East Anandbagh Main Rd, Surya
+                                nagar, Aishwarya Plaza, Safilguda, Malkajgiri</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="reveal-right">
+                    <div class="map-card">
+                        <a href="https://www.google.com/maps/place/Dr.+T+N.+Rekha+Singh+Skin,+Hair+%26+Laser+Clinic+-+Malkajgiri,+Secunderabad/@17.4589165,78.5386496,17z/data=!4m14!1m7!3m6!1s0x3bcb9bba381622e9:0x8bb975762b61c447!2sDr.+T+N.+Rekha+Singh+Skin,+Hair+%26+Laser+Clinic+-+Malkajgiri,+Secunderabad!8m2!3d17.4589165!4d78.5386496!16s%2Fg%2F1q2wdvql0!3m5!1s0x3bcb9bba381622e9:0x8bb975762b61c447!8m2!3d17.4589165!4d78.5386496!16s%2Fg%2F1q2wdvql0?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D"
+                            target="_blank" rel="noopener">
+                            <div class="map-placeholder">
+                                <div class="map-pin">📍</div>
+                                <div class="map-label">Dr. T N Rekha Singh Skin Clinic</div>
+                                <div class="map-sublabel">Malkajgiri, Hyderabad</div>
+                                <div
+                                    style="margin-top:8px;background:white;color:var(--sage-dark);padding:8px 20px;border-radius:99px;font-size:0.78rem;font-weight:600;">
+                                    Open in Google Maps →
+                                </div>
+                            </div>
+                        </a>
+                        <div class="map-info">
+                            <p>
+                                Easily accessible from Secunderabad, Malkajgiri, ECIL, and Uppal.<br />
+                                <a href="https://www.google.com/maps/place/Dr.+T+N.+Rekha+Singh+Skin,+Hair+%26+Laser+Clinic+-+Malkajgiri,+Secunderabad/@17.4589165,78.5386496,17z/data=!4m14!1m7!3m6!1s0x3bcb9bba381622e9:0x8bb975762b61c447!2sDr.+T+N.+Rekha+Singh+Skin,+Hair+%26+Laser+Clinic+-+Malkajgiri,+Secunderabad!8m2!3d17.4589165!4d78.5386496!16s%2Fg%2F1q2wdvql0!3m5!1s0x3bcb9bba381622e9:0x8bb975762b61c447!8m2!3d17.4589165!4d78.5386496!16s%2Fg%2F1q2wdvql0?entry=ttu&g_ep=EgoyMDI2MDMyNC4wIKXMDSoASAFQAw%3D%3D"
+                                    target="_blank">Get Directions →</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        style="margin-top:20px;background:var(--sage);border-radius:var(--radius);padding:20px 24px;display:flex;gap:14px;align-items:center;">
+                        <div style="font-size:1.8rem;">📞</div>
+                        <div>
+                            <div style="font-weight:600;font-size:0.9rem;color:var(--sage-deeper);">Call us directly to
+                                book your slot</div>
+                            <a href="tel:+918297882978"
+                                style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;color:var(--sage-deeper);">+91
+                                82978 82978</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <div class="nav-logo" style="color:white;margin-bottom:14px;">
+                            Dr. T N Rekha Singh
+                            <span style="color:var(--sage-mid);">Skin · Hair · Laser Clinic</span>
+                        </div>
+                        <p>A trusted destination for advanced dermatology and cosmetic treatments in Hyderabad — led by
+                            Telangana's leading dermatologist with over 20 years of excellence.</p>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Services</h4>
+                        <ul>
+                            <li><a href="#services">Acne & Scar Treatment</a></li>
+                            <li><a href="#services">Laser Hair Removal</a></li>
+                            <li><a href="#services">PRP Hair Therapy</a></li>
+                            <li><a href="#services">Pigmentation Treatment</a></li>
+                            <li><a href="#services">Anti-Aging Treatments</a></li>
+                            <li><a href="#services">Medical Dermatology</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#about">About the Clinic</a></li>
+                            <li><a href="#doctor">Meet Dr. Rekha Singh</a></li>
+                            <li><a href="#gallery">Patient Results</a></li>
+                            <li><a href="#testimonials">Reviews</a></li>
+                            <li><a href="#booking">Book Appointment</a></li>
+                            <li><a href="#contact">Contact Us</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h4>Contact</h4>
+                        <ul>
+                            <li><a href="tel:+918297882978">+91 82978 82978</a></li>
+                            <li><a href="#contact">100 Feet Road, Malkajgiri</a></li>
+                            <li><a href="#contact">Hyderabad – 500047</a></li>
+                            <li><a href="#contact">Mon–Sat: 10AM – 7PM</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>© 2025 Dr. T N Rekha Singh Skin, Hair & Laser Clinic. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" class="social-link" title="Facebook">f</a>
+                <a href="#" class="social-link" title="Instagram">in</a>
+                <a href="#" class="social-link" title="WhatsApp">w</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCROLL TOP -->
+    <button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">↑</button>
+
+    <script>
+        /* ============================
+           LOADER
+        ============================ */
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+            }, 1800);
+        });
+
+        /* ============================
+           NAVBAR SCROLL
+        ============================ */
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            navbar.classList.toggle('scrolled', window.scrollY > 60);
+            document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 400);
+        });
+
+        /* ============================
+           MOBILE MENU
+        ============================ */
+        const hamburger = document.getElementById('hamburger');
+        const mobileMenu = document.getElementById('mobile-menu');
+        function toggleMenu() {
+            hamburger.classList.toggle('open');
+            mobileMenu.classList.toggle('active');
+            document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+        }
+        function closeMenu() {
+            hamburger.classList.remove('open');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        /* ============================
+           SCROLL REVEAL
+        ============================ */
+        const revealEls = document.querySelectorAll('.reveal,.reveal-left,.reveal-right');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(e => {
+                if (e.isIntersecting) {
+                    e.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.12 });
+        revealEls.forEach(el => revealObserver.observe(el));
+
+        /* ============================
+           MARQUEE BUILD
+        ============================ */
+        const marqueeItems = [
+            'Acne & Scar Treatments', 'Laser Hair Removal', 'PRP Hair Therapy', 'Melasma & Pigmentation',
+            'Botox & Fillers', 'Anti-Aging Facials', 'Wart Removal', 'Chemical Peels', 'Skin Brightening',
+            'Hair Loss Treatment', 'Laser Resurfacing', 'Dermabrasion'
+        ];
+        const track = document.getElementById('marqueeTrack');
+        const doubled = [...marqueeItems, ...marqueeItems];
+        doubled.forEach(item => {
+            const div = document.createElement('div');
+            div.className = 'marquee-item';
+            div.innerHTML = `<span class="marquee-dot"></span>${item}`;
+            track.appendChild(div);
+        });
+
+        /* ============================
+           TESTIMONIALS SLIDER
+        ============================ */
+        let currentSlide = 0;
+        const testiTrack = document.getElementById('testiTrack');
+        const testiNav = document.getElementById('testiNav');
+        const cards = testiTrack.querySelectorAll('.testi-card');
+        let visibleCount = window.innerWidth > 900 ? 3 : window.innerWidth > 600 ? 2 : 1;
+        const totalSlides = Math.max(0, cards.length - visibleCount);
+
+        function buildDots() {
+            testiNav.innerHTML = '';
+            for (let i = 0; i <= totalSlides; i++) {
+                const btn = document.createElement('button');
+                btn.className = 'testi-dot' + (i === currentSlide ? ' active' : '');
+                btn.onclick = () => goSlide(i);
+                testiNav.appendChild(btn);
+            }
+        }
+
+        function goSlide(idx) {
+            currentSlide = idx;
+            const cardW = cards[0].offsetWidth + 24;
+            testiTrack.style.transform = `translateX(-${idx * cardW}px)`;
+            testiTrack.style.transition = 'transform 0.5s cubic-bezier(0.25,0.8,0.25,1)';
+            testiNav.querySelectorAll('.testi-dot').forEach((d, i) => d.classList.toggle('active', i === idx));
+        }
+
+        buildDots();
+        setInterval(() => {
+            currentSlide = currentSlide >= totalSlides ? 0 : currentSlide + 1;
+            goSlide(currentSlide);
+        }, 5000);
+
+        window.addEventListener('resize', () => {
+            visibleCount = window.innerWidth > 900 ? 3 : window.innerWidth > 600 ? 2 : 1;
+            currentSlide = 0;
+            goSlide(0);
+            buildDots();
+        });
+
+        /* ============================
+           APPOINTMENT FORM
+        ============================ */
+        function handleSubmit(e) {
+            e.preventDefault();
+            const form = document.getElementById('appointmentForm');
+            const success = document.getElementById('form-success');
+            form.style.display = 'none';
+            success.style.display = 'block';
+        }
+
+        /* ============================
+           SMOOTH SCROLL NAV
+        ============================ */
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const target = document.querySelector(a.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
